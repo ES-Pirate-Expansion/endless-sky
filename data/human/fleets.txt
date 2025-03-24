@@ -1921,7 +1921,7 @@ fleet "Large Southern Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		plunders harvests getaway
+		plunders harvests coward getaway
 	variant 2
 		"Sparrow" 4
 	variant 1
@@ -2439,7 +2439,7 @@ fleet "Large Northern Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		plunders harvests getaway
+		plunders harvests coward getaway
 	variant 4
 		"Firebird"
 	variant 10
