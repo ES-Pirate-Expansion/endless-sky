@@ -3390,6 +3390,7 @@ Files:
  sounds/neutron?bolt*
  sounds/scin?launch*
  sounds/sheragi?launch*
+ sounds/sjeja?lance*
  sounds/stagnation?beam*
  sounds/star?tail*
  sounds/*successor?afterburner*
@@ -4089,6 +4090,11 @@ License: public-domain
  Derived from works by NASA/JPL-Caltech/Malin Space Science Systems.
 
 Files:
+ images/ship/escape?shuttle*
+Copyright: mOctave (https://github.com/mOctave)
+License: CC-BY-SA-4.0
+
+Files:
  images/effect/bimodal?impact*
  images/effect/bimodal?switch?impact*
  images/effect/drag?cannon?impact*
@@ -4232,6 +4238,11 @@ Files:
 Copyright: bene-dictator (https://github.com/bene-dictator), Koranir (https://github.com/Koranir)
 License: CC-BY-SA-4.0
 Comment: Original model by bene-dictator, edits done by Koranir.
+
+Files:
+ images/ui/paused*
+Copyright: David Stark (zarkonnen@gmail.com)
+License: CC-BY-SA-4.0
 
 License: Depends
  Taken from unsplash.com. Until June 2017, this was a collection of photographs that had been donated and
