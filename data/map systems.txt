@@ -7196,6 +7196,10 @@ system Atik
 		sprite planet/lava1
 		distance 1905.05
 		period 270.619
+	object "Copperline Station"
+		sprite "planet/copperline station"
+		distance 1975
+		period 165
 
 system Atria
 	pos -551 532
