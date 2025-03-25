@@ -72,8 +72,8 @@ ship "Argosy" "Argosy (Missile)"
 		"Meteor Missile Launcher" 4
 		"Meteor Missile" 165
 		"Meteor Missile Box" 3
-		"Laser Turret"
-		"Heavy Anti-Missile Turret"
+		"Modified Blaster Turret"
+		"Anti-Missile Turret"
 		"Fission Reactor"
 		"Supercapacitor"
 		"D41-HY Shield Generator"
