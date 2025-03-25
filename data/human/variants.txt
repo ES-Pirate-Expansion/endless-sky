@@ -2285,7 +2285,7 @@ ship "Hawk" "Hawk (Plasma)"
 
 ship "Hawk" "Hawk (Rocket)"
 	outfits
-		"Beam Laser"
+		"Heavy Laser"
 		"Heavy Rocket Launcher"
 		"Heavy Rocket" 10
 		"RT-I Radiothermal"
