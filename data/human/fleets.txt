@@ -1833,7 +1833,7 @@ fleet "Small Southern Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		disables plunders harvests getaway
+		disables plunders harvests coward frugal getaway
 		confusion 20
 	variant 8
 		"Sparrow"
@@ -1921,7 +1921,7 @@ fleet "Large Southern Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		plunders harvests getaway
+		disables plunders harvests coward frugal getaway
 	variant 2
 		"Sparrow" 4
 	variant 1
@@ -2244,7 +2244,7 @@ fleet "Small Core Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		disables plunders harvests getaway
+		disables plunders harvests coward frugal getaway
 		confusion 20
 	variant 3
 		"Quicksilver"
@@ -2295,7 +2295,7 @@ fleet "Large Core Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		plunders harvests getaway
+		disables plunders harvests coward frugal getaway
 	variant 5
 		"Quicksilver (Proton)" 3
 	variant 2
@@ -2369,7 +2369,7 @@ fleet "Small Northern Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		disables plunders harvests getaway
+		disables plunders harvests coward frugal getaway
 		confusion 20
 	variant 5
 		"Sparrow"
@@ -2439,7 +2439,7 @@ fleet "Large Northern Pirates"
 	names "pirate"
 	cargo 1
 	personality
-		plunders harvests getaway
+		disables plunders harvests coward frugal getaway
 	variant 4
 		"Firebird"
 	variant 10
