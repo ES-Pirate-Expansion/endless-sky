@@ -3672,12 +3672,6 @@ ship "Wasp" "Wasp (Javelin)"
 		"X2700 Ion Thruster"
 		"X2200 Ion Steering"
 		"Hyperdrive"
-	gun "Energy Blaster"
-	gun
-	gun "Javelin Mini Pod"
-	gun "Javelin Mini Pod"
-	gun "Javelin Mini Pod"
-	gun "Javelin Mini Pod"
 
 ship "Wasp" "Wasp (Meteor)"
 	outfits
