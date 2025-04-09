@@ -2101,7 +2101,7 @@ government "Rulei"
 	"hostile hail" "rulei hostile"
 
 government "Rumrunners"
-	swizzle 
+	swizzle Rumrunners
 	"player reputation" 0
 
 	"attitude toward"
