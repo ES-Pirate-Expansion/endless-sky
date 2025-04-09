@@ -593,6 +593,9 @@ outfitter "South Pirate Advanced"
 	"Javelin Turret"
 	"Gatling Turret"
 
+outfitter "Copperline Station"
+	"Coreshine"
+
 outfitter "Syndicate Assistance"
 	"Anti-Missile Turret"
 	"Heavy Anti-Missile Turret"
