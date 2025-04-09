@@ -983,10 +983,13 @@ planet "Copperline Station"
 	description `	Myth no more, the harvesting of the Cloud to be processed into drinking alcohol is now a fairly lucrative industry - if one that the inhabitants of Copperline Station refuse to pay taxes on.`
 	description `	The station itself is a fairly riotous assemblage of hangars, industrial distilleries, habitats, and ill-advised combinations thereof which would, no doubt, leave Republic health and safety officials aghast.`
 	spaceport `Bootleggers are notorious for their hotrodded starships, but most of the vessels parked here look decidedly mundane. Stock hull configuration, stock paint jobs, nothing that would mark them as anything but another interstellar traveler. It's only when you see a shuttle that's undergoing maintenance that the oversized engines and custom afterburner become visible.`
-	government Independent
+	outfitter "Ammo North"
+	outfitter "Copperline Station"
+	outfitter "Pirate Basics"
+	government Rumrunners
 	tribute 2200
 		threshold 3400
-		fleet "Large Core Pirates" 11
+		fleet "Large Rumrunners" 11
 
 planet Cornucopia
 	attributes farming forest frontier research south

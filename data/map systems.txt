@@ -3504,6 +3504,8 @@ system Alcyone
 	fleet "Small Core Pirates" 400
 	fleet "Large Core Pirates" 600
 	fleet "Large Syndicate" 1200
+	fleet "Small Rumrunners" 1300
+	fleet "Large Rumrunners" 1900
 	fleet "Korath Large Raid" 50000
 	object
 		sprite star/m5
@@ -7162,7 +7164,9 @@ system Atik
 	trade Medical 651
 	trade Metal 327
 	trade Plastic 416
+	fleet "Small Rumrunners" 9000
 	fleet "Small Core Pirates" 10000
+	fleet "Large Rumrunners" 12000
 	fleet "Large Core Pirates" 18000
 	fleet "Human Miners" 5000
 	fleet "Korath Miners" 15000
@@ -7196,14 +7200,6 @@ system Atik
 		sprite planet/lava1
 		distance 1905.05
 		period 270.619
-	object "Copperline Station"
-		sprite "planet/copperline station"
-		distance 1975
-		period 297.794
-	object "Blueside Station"
-		sprite planet/station2b
-		distance 2050
-		period 309.859
 
 system Atria
 	pos -551 532
@@ -13578,8 +13574,10 @@ system Durax
 	trade Medical 791
 	trade Metal 329
 	trade Plastic 372
-	fleet "Small Core Pirates" 600
-	fleet "Large Core Pirates" 900
+	fleet "Small Core Pirates" 700
+	fleet "Large Core Pirates" 1000
+	fleet "Small Rumrunners" 1000
+	fleet "Large Rumrunners" 2400
 	fleet "Large Syndicate" 2500
 	fleet "Korath Raid" 7000
 	fleet "Korath Miners" 17000
@@ -13607,6 +13605,10 @@ system Durax
 		sprite planet/ice8
 		distance 1740.09
 		period 624.727
+	object "Blueside Station"
+		sprite planet/station2b
+		distance 2050
+		period 756.598
 	object
 		sprite planet/gas2
 		distance 2530.73
@@ -13619,6 +13621,15 @@ system Durax
 			sprite planet/tethys
 			distance 351
 			period 29.2266
+	object "Copperline Station"
+		sprite "planet/copperline station"
+		distance 2978.74
+		period 1459.481
+		object
+			sprite "planet/asteroid base"
+				scale .1
+			distance 350.79
+			period 42.4821
 
 system E-4183
 	pos 1042.97 -618.13
@@ -27973,7 +27984,9 @@ system Misam
 	trade Metal 288
 	trade Plastic 368
 	fleet "Small Core Pirates" 750
+	fleet "Small Rumrunners" 1900
 	fleet "Large Core Pirates" 2000
+	fleet "Large Rumrunners" 2200
 	fleet "Korath Raid" 5000
 	fleet "Korath Large Raid" 11000
 	fleet "Human Miners" 10000

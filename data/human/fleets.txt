@@ -2364,6 +2364,54 @@ fleet "Large Core Pirates"
 	variant 2
 		"Protector"
 
+fleet "Small Rumrunners"
+	government "Rumrunners"
+	names "pirate"
+	cargo 1
+	personality
+		disables plunders harvests getaway
+		confusion 20
+	variant 3
+		"Quicksilver (Rumrunners)"
+	variant 3
+		"Quicksilver (Proton)"
+	variant 2
+		"Wasp (Rumrunners)"
+	variant 1
+		"Quicksilver (Rumrunners)" 2
+	variant 1
+		"Quicksilver (Proton)"
+		"Quicksilver (Rumrunners)"
+	variant 1
+		"Wasp (Rumrunners)" 2
+	variant 1
+		"Splinter (Rumrunners)"
+
+fleet "Large Rumrunners"
+	government "Rumrunners"
+	names "pirate"
+	cargo 1
+	personality
+		plunders harvests getaway
+	variant 3
+		"Splinter (Rumrunners)"
+		"Quicksilver (Rumrunners)"
+	variant 2
+		"Quicksilver (Rumrunners)" 3
+	variant 1
+		"Splinter (Rumrunners)"
+		"Fury (Heavy)"
+	variant 3
+		"Fury (Bomber)"
+		"Quicksilver (Rumrunners)" 2
+	variant 3
+		"Splinter (Rumrunners)"
+		"Quicksilver"
+	variant 2
+		"Splinter (Rumrunners)" 2
+	variant 1
+		"Leviathan"
+
 fleet "Small Northern Pirates"
 	government "Pirate"
 	names "pirate"

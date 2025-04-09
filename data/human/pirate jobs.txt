@@ -3412,3 +3412,93 @@ mission "Republic Assassination [2]"
 		"reputation: Republic" -= 15
 		"reputation: Navy (Oathkeeper)" -= 15
 		"reputation: Pirate" += 5
+
+mission "Coreshine Smuggling [0]"
+	job
+	repeat
+	name "Coreshine Smuggling"
+	description "Smuggle <tons> of coreshine to <destination> for a payment of <payment>. If you are caught you may be fined <fine>."
+	source "Copperline Station"
+	cargo "Coreshine" 5 60 .2
+	illegal 10000 "When the authorities find you have coreshine on your ship, they fine you <fine> and confiscate the illegal materials."
+	destination
+		government "Pirate"
+		not attributes uninhabited
+	to offer
+		"combat rating" > 50
+		"reputation: Rumrunners" >= 0
+		random < 60
+	on complete
+		payment
+		dialog "The barrels of coreshine are unloaded from your ship, and you are paid <payment>."
+
+mission "Coreshine Smuggling [1]"
+	job
+	repeat
+	name "Coreshine Smuggling"
+	description "Smuggle <tons> of coreshine to <destination> for a payment of <payment>. If you are caught you may be fined <fine>."
+	source "Copperline Station"
+	cargo "Coreshine" 50 100 .2
+	illegal 10000 "When the authorities find you have coreshine on your ship, they fine you <fine> and confiscate the illegal materials."
+	destination
+		government "Pirate"
+		not attributes uninhabited
+	to offer
+		"combat rating" > 50
+		"reputation: Rumrunners" >= 0
+		random < 40
+	on complete
+		payment
+		dialog "The barrels of coreshine are unloaded from your ship, and you are paid <payment>."
+
+mission "Coreshine Smuggling [2]"
+	job
+	repeat
+	name "Coreshine Smuggling"
+	description "Smuggle <tons> of coreshine to <destination> for a payment of <payment>. If you are caught you may be fined <fine>."
+	source "Copperline Station"
+	cargo "Coreshine" 5 100 .2
+	illegal 10000 "When the authorities find you have coreshine on your ship, they fine you <fine> and confiscate the illegal materials."
+	"apparent payment" 100000
+	destination
+		government "Pirate"
+		not attributes uninhabited
+	to offer
+		"combat rating" > 50
+		random < 10
+	on complete
+		dialog "The barrels of coreshine are unloaded from your ship, but the pirates who unload it run off before paying."
+
+mission "Copperline Station Parts [0]"
+	job
+	repeat
+	name "Parts to <planet>"
+	description "Haul <tons> of <cargo> to <destination> to help build the station. Payment will be <payment>. You may be fired upon."
+	source
+		government "Syndicate"
+		not attributes uninhabited
+	destination "Copperline Station"
+	cargo Construction 5 50 .2
+	to offer
+		"reputation: Rumrunners" > 10
+		random < 1
+	on complete
+		payment
+		dialog "The construction materials are unloaded from your ship and you are paid <payment>."
+
+mission "Copperline Station Parts [1]"
+	job
+	repeat
+	name "Parts to <planet>"
+	description "Haul <tons> of <cargo> to <destination> to help build the station. Payment will be <payment>. You may be fired upon."
+	source
+		government "Syndicate"
+		not attributes uninhabited
+	destination "Copperline Station"
+	cargo Construction 50 120 .2
+	to offer
+		"reputation: Rumrunners" > 10
+		random < 1
+	on complete
+		payment
+		dialog "The construction materials are unloaded from your ship and you are paid <payment>."

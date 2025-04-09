@@ -2096,6 +2096,24 @@ government "Rulei"
 	"fine" 0
 	"hostile hail" "rulei hostile"
 
+government "Rumrunners"
+	swizzle 
+	"player reputation" 0
+
+	"attitude toward"
+		"Korath" .01
+		"Merchant" -.1
+		"Pirate" .01
+		"Republic" -.1
+		"Syndicate" -.1
+
+	"friendly hail" "friendly pirate"
+	"friendly disabled hail" "friendly disabled"
+	"hostile hail" "hostile pirate"
+	"hostile disabled hail" "hostile disabled"
+	"bribe" 0
+	"fine" 0
+
 government "Scar's Legion"
 	swizzle 6
 	color "governments: Pirate"

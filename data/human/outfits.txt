@@ -531,6 +531,14 @@ outfit "Local Map"
 	description "This data chip contains complete information on the twelve star systems closest to this one: planets, ports, governments, trade prices, available services, etc. You can get all the same information just by exploring those systems yourself, but having a map can save you from making wrong turns if you are trying to travel through new territory to reach a certain system quickly."
 
 
+outfit "Coreshine"
+	category "Special"
+	cost 50000
+	thumbnail "outfit/coreshine"
+	"illegal" 10000
+	description "Coreshine is a highly illegal substance produced in the Northern Core's Great Molecular Cloud."
+
+
 outfit "Pilot's License"
 	category "Licenses"
 	series "Licenses"

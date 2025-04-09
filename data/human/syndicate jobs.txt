@@ -231,6 +231,7 @@ mission "Syndicate target practice [0]"
 		fine 160000
 	on complete
 		payment 80000
+		"reputation: Rumrunners" -= .25
 		dialog "You transmit the scan results to a team of eager engineers and collect your payment of <payment>."
 
 
@@ -267,6 +268,7 @@ mission "Syndicate target practice [1]"
 		fine 300000
 	on complete
 		payment 150000
+		"reputation: Rumrunners" -= .25
 		dialog "You transmit the scan results to a team of eager engineers and collect your payment of <payment>."
 
 
@@ -303,6 +305,7 @@ mission "Syndicate target practice [2]"
 		fine 520000
 	on complete
 		payment 260000
+		"reputation: Rumrunners" -= .25
 		dialog "You transmit the scan results to a team of eager engineers and collect your payment of <payment>."
 
 
@@ -338,6 +341,7 @@ mission "Syndicate target practice [3]"
 		fine 800000
 	on complete
 		payment 400000
+		"reputation: Rumrunners" -= .25
 		dialog "You transmit the scan results to a team of eager engineers and collect your payment of <payment>."
 
 ship "Berserker" "Berserker Test Dummy"

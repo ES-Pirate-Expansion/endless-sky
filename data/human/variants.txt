@@ -3181,6 +3181,22 @@ ship "Quicksilver" "Quicksilver (Proton)"
 		"Hyperdrive"
 
 
+ship "Quicksilver" "Quicksilver (Rumrunners)"
+	outfits
+		"Particle Cannon" 2
+		
+		"nGVF-DD Fuel Cell"
+		"LP036a Battery Pack"
+
+		"Capybara Reverse Thruster"
+		"Greyhound Plasma Thruster"
+		"Greyhound Plasma Steering"
+		"Hyperdrive"
+	cargo
+		outfits
+			"Coreshine" 15
+
+
 ship "Quicksilver" "Quicksilver (Scanner)"
 	outfits
 		"Particle Cannon" 2
@@ -3479,6 +3495,27 @@ ship "Splinter" "Splinter (Proton)"
 	turret "Proton Turret"
 	
 
+ship "Splinter" "Splinter (Rumrunners)"
+	outfits
+		"Heavy Laser" 2
+		"Heavy Laser Turret" 2
+		"Heavy Anti-Missile Turret"
+		"Water Coolant System"
+		"Fission Reactor"
+		"LP036a Battery Pack"
+		"D94-YV Shield Generator"
+		"Laser Rifle"
+		"X3700 Ion Thruster"
+		"Impala Plasma Steering"
+		"Hyperdrive"
+	turret "Heavy Laser Turret"
+	turret "Heavy Anti-Missile Turret"
+	turret "Heavy Laser Turret"
+	cargo
+		outfits
+			"Coreshine" 75
+
+
 ship "Splinter" "Splinter (Tractor Beam)"
 	outfits
 		"Twin Modified Blaster" 2
@@ -3699,7 +3736,7 @@ ship "Wasp" "Wasp (Plasma)"
 		"X2700 Ion Thruster"
 		"X2200 Ion Steering"
 		"Hyperdrive"
-		
+
 
 ship "Wasp" "Wasp (Proton)"
 	outfits
@@ -3710,3 +3747,19 @@ ship "Wasp" "Wasp (Proton)"
 		"X2700 Ion Thruster"
 		"X2200 Ion Steering"
 		"Hyperdrive"
+
+
+ship "Wasp" "Wasp (Rumrunners)"
+	outfits
+		"Energy Blaster" 3
+		
+		"nGVF-BB Fuel Cell"
+		"LP036a Battery Pack"
+		"D14-RN Shield Generator"
+		
+		"X2700 Ion Thruster"
+		"X2200 Ion Steering"
+		"Hyperdrive"
+	cargo
+		outfits
+			"Coreshine" 10
