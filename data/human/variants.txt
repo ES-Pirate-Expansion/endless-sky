@@ -72,7 +72,8 @@ ship "Argosy" "Argosy (Missile)"
 		"Meteor Missile Launcher" 4
 		"Meteor Missile" 165
 		"Meteor Missile Box" 3
-		"Anti-Missile Turret" 2
+		"Modified Blaster Turret"
+		"Anti-Missile Turret"
 		"Fission Reactor"
 		"Supercapacitor"
 		"D41-HY Shield Generator"
@@ -80,9 +81,6 @@ ship "Argosy" "Argosy (Missile)"
 		"A370 Atomic Thruster"
 		"A255 Atomic Steering"
 		"Hyperdrive"
-	turret "Anti-Missile Turret"
-	turret "Anti-Missile Turret"
-
 
 ship "Argosy" "Argosy (Proton)"
 	outfits
@@ -615,6 +613,7 @@ ship "Berserker" "Berserker (Afterburner)"
 
 ship "Berserker" "Berserker (Strike)"
 	outfits
+		"Energy Blaster" 2
 		"Heavy Rocket Pod"
 		"Heavy Rocket" 2
 		"Sidewinder Missile Pod"
@@ -943,8 +942,9 @@ ship "Carrier" "Carrier (Mark II)"
 
 ship "Clipper" "Clipper (Heavy)"
 	outfits
-		"Heavy Rocket Pod" 2
-		"Heavy Rocket" 4
+		"Energy Blaster"
+		"Heavy Rocket Launcher"
+		"Heavy Rocket" 10
 		"Meteor Missile Launcher" 2
 		"Meteor Missile" 60
 		"RT-I Radiothermal"
@@ -1144,7 +1144,7 @@ ship "Corvette" "Corvette (Missile)"
 		"Sidewinder Missile Launcher" 2
 		"Sidewinder Missile" 159
 		"Sidewinder Missile Rack" 3
-		"Anti-Missile Turret"
+		"Modified Blaster Turret"
 		"Heavy Anti-Missile Turret"
 		"Fission Reactor"
 		"LP036a Battery Pack"
@@ -1158,9 +1158,8 @@ ship "Corvette" "Corvette (Missile)"
 	gun "Sidewinder Missile Launcher"
 	gun "Torpedo Launcher"
 	gun "Torpedo Launcher"
-	turret "Anti-Missile Turret"
+	turret "Modified Blaster Turret"
 	turret "Heavy Anti-Missile Turret"
-
 
 ship "Corvette" "Corvette (Speedy)"
 	outfits
@@ -2022,6 +2021,7 @@ ship "Frigate" "Frigate (Mark II)"
 
 ship "Fury" "Fury (Bomber)"
 	outfits
+		"Beam Laser"
 		"Heavy Rocket Pod"
 		"Heavy Rocket" 2
 		"Meteor Missile Pod" 2
@@ -2118,6 +2118,7 @@ ship "Fury" "Fury (Miner B)"
 
 ship "Fury" "Fury (Missile)"
 	outfits
+		"Beam Laser"
 		"Javelin Pod"
 		"Javelin" 200
 		"Meteor Missile Pod" 2
@@ -2232,10 +2233,9 @@ ship "Hauler III" "Hauler III (Hai)"
 
 ship "Hawk" "Hawk (Bomber)"
 	outfits
-		"Heavy Rocket Pod"
-		"Heavy Rocket" 2
-		"Torpedo Pod"
-		"Torpedo" 3
+		"Heavy Laser"
+		"Torpedo Launcher"
+		"Torpedo" 6
 		"nGVF-CC Fuel Cell"
 		"Supercapacitor"
 		"D41-HY Shield Generator"
@@ -2285,8 +2285,9 @@ ship "Hawk" "Hawk (Plasma)"
 
 ship "Hawk" "Hawk (Rocket)"
 	outfits
-		"Heavy Rocket Pod" 2
-		"Heavy Rocket" 4
+		"Heavy Laser"
+		"Heavy Rocket Launcher"
+		"Heavy Rocket" 10
 		"RT-I Radiothermal"
 		"Supercapacitor" 2
 		"D41-HY Shield Generator"
@@ -2359,10 +2360,11 @@ ship "Headhunter" "Headhunter (Particle)"
 
 ship "Headhunter" "Headhunter (Strike)"
 	outfits
+		"Modified Blaster"
 		"Javelin Pod" 2
 		"Javelin" 400
-		"Meteor Missile Pod" 2
-		"Meteor Missile" 14
+		"Meteor Missile Launcher"
+		"Meteor Missile" 30
 		"Anti-Missile Turret"
 		"RT-I Radiothermal"
 		"LP072a Battery Pack"
@@ -3340,7 +3342,7 @@ ship "Scout" "Scout (Speedy)"
 		"Meteor Missile" 7
 		"Sidewinder Missile Pod"
 		"Sidewinder Missile" 6
-		"Anti-Missile Turret"
+		"Blaster Turret"
 		"NT-200 Nucleovoltaic"
 		"Supercapacitor"
 		"D23-QP Shield Generator"
@@ -3348,6 +3350,7 @@ ship "Scout" "Scout (Speedy)"
 		"Outfits Expansion"
 		"A370 Atomic Thruster"
 		"A255 Atomic Steering"
+		"Volcano Afterburner"
 		"Hyperdrive"
 
 
@@ -3696,20 +3699,16 @@ ship "Wasp" "Wasp (Gatling)"
 		
 ship "Wasp" "Wasp (Javelin)"
 	outfits
-		"Javelin Pod" 2
-		"Javelin" 400
+		"Energy Blaster"
+		"Javelin Mini Pod" 4
+		"Javelin" 220
+		"Javelin Storage Crate"
 		"nGVF-BB Fuel Cell"
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
 		"X2700 Ion Thruster"
 		"X2200 Ion Steering"
 		"Hyperdrive"
-	gun
-	gun "Javelin Pod"
-	gun "Javelin Pod"
-	gun
-	gun
-	
 
 ship "Wasp" "Wasp (Meteor)"
 	outfits
