@@ -7199,7 +7199,11 @@ system Atik
 	object "Copperline Station"
 		sprite "planet/copperline station"
 		distance 1975
-		period 165
+		period 297.794
+	object "Blueside Station"
+		sprite planet/station2b
+		distance 2050
+		period 309.859
 
 system Atria
 	pos -551 532

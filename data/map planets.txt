@@ -583,6 +583,14 @@ planet Bluerun
 	bribe 0
 	security 0
 
+planet "Blueside Station"
+	attributes derelict pirate station
+	landscape land/station47
+	description `Blueside Station was originally built to harvest the dense clouds of alcohol in the Great Molecular Cloud that it lies in. Unfortunately, due to an incident during the construction process, Blueside had to be abandoned. Copperline Station was later built using very similar plans.`
+	government Uninhabited
+	bribe 0
+	security 0
+
 planet Bluestone
 	attributes core frontier oil research
 	landscape land/mountain2
