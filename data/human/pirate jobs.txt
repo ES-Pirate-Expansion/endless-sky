@@ -3476,7 +3476,6 @@ mission "Copperline Station Parts [0]"
 	description "Haul <tons> of <cargo> to <destination> to help build the station. Payment will be <payment>. You may be fired upon."
 	source
 		government "Syndicate"
-		not attributes uninhabited
 	destination "Copperline Station"
 	cargo Construction 5 50 .2
 	to offer
@@ -3493,7 +3492,6 @@ mission "Copperline Station Parts [1]"
 	description "Haul <tons> of <cargo> to <destination> to help build the station. Payment will be <payment>. You may be fired upon."
 	source
 		government "Syndicate"
-		not attributes uninhabited
 	destination "Copperline Station"
 	cargo Construction 50 120 .2
 	to offer
@@ -3502,3 +3500,71 @@ mission "Copperline Station Parts [1]"
 	on complete
 		payment
 		dialog "The construction materials are unloaded from your ship and you are paid <payment>."
+
+mission "Coreshine Acquisition [0]"
+	job
+	repeat
+	name "Coreshine to <planet>"
+	description "Get five tons of Coreshine, which is generally found near the Misam system, and bring it to <destination> for a payment of <payment>."
+	source
+		government "Pirate"
+	to offer
+		has "landing access: Copperline Station"
+		"reputation: Pirate" >= 0
+		random < 15
+	on complete
+		require "Coreshine" 5
+		outfit "Coreshine" -5
+		payment 300000
+		dialog "The five tons of coreshine are unloaded from your ship, and you are paid <payment>."
+
+mission "Coreshine Acquisition [1]"
+	job
+	repeat
+	name "Coreshine to <planet>"
+	description "Get five tons of Coreshine, which is generally found near the Misam system, and bring it to <destination> for a payment of <payment>."
+	source
+		government "Pirate"
+	to offer
+		has "landing access: Copperline Station"
+		"reputation: Pirate" >= 0
+		random < 8
+	on complete
+		require "Coreshine" 5
+		outfit "Coreshine" -5
+		payment 350000
+		dialog "The five tons of coreshine are unloaded from your ship, and you are paid <payment>."
+
+mission "Coreshine Acquisition [2]"
+	job
+	repeat
+	name "Coreshine to <planet>"
+	description "Get ten tons of Coreshine, which is generally found near the Misam system, and bring it to <destination> for a payment of <payment>."
+	source
+		government "Pirate"
+	to offer
+		has "landing access: Copperline Station"
+		"reputation: Pirate" >= 0
+		random < 11
+	on complete
+		require "Coreshine" 10
+		outfit "Coreshine" -10
+		payment 550000
+		dialog "The ten tons of coreshine are unloaded from your ship, and you are paid <payment>."
+
+mission "Coreshine Acquisition [3]"
+	job
+	repeat
+	name "Coreshine to <planet>"
+	description "Get twenty tons of Coreshine, which is generally found near the Misam system, and bring it to <destination> for a payment of <payment>."
+	source
+		government "Pirate"
+	to offer
+		has "landing access: Copperline Station"
+		"reputation: Pirate" >= 0
+		random < 9
+	on complete
+		require "Coreshine" 20
+		outfit "Coreshine" -20
+		payment 1200000
+		dialog "The twenty tons of coreshine are unloaded from your ship, and you are paid <payment>."
