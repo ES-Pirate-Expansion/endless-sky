@@ -4235,9 +4235,14 @@ Comment: Uses public domain textures from texture.ninja. Meshes were made by an 
 
 Files:
  images/planet/copperline?station*
-Copyright: bene-dictator (https://github.com/bene-dictator), Koranir (https://github.com/Koranir)
+Copyright: Koranir (https://github.com/Koranir)
 License: CC-BY-SA-4.0
-Comment: Original model by bene-dictator, edits done by Koranir.
+Comment: Initial proof of concept by bene-dictator, edits done by Koranir.
+
+Files:
+ images/outfit/coreshine*
+Copyright: Koranir (https://github.com/Koranir)
+License: CC-BY-SA-4.0
 
 Files:
  images/ui/paused*

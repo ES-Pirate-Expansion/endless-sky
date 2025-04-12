@@ -137,6 +137,12 @@ shipyard "Advanced Core Pirates"
 	"Protector"
 	"Vanguard"
 
+shipyard "Rumrunners"
+	"Quicksilver (Rumrunners)"
+	"Scrapper"
+	"Splinter (Rumrunners)"
+	"Wasp (Rumrunners)"
+
 shipyard "Luxury Ships"
 	"Shuttle"
 	"Blackbird"

@@ -1922,7 +1922,7 @@ news "syndicate soldier"
 
 news "pirate"
 	location
-		government "Pirate"
+		government "Pirate" "Rumrunners"
 	name
 		word
 			"Pirate"
@@ -2525,7 +2525,7 @@ news "safety posters"
 
 news "graffiti on spaceport wall"
 	location
-		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent" "Pirate"
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent" "Pirate" "Rumrunners"
 	name
 		word
 			"Graffiti painted on a wall"
@@ -2901,3 +2901,22 @@ news "betelgeuse stolen ship advisory"
 			"criminals. "
 		word
 			`Buy a genuine Betelgeuse ship today!"`
+
+news "rumrunners"
+	location
+		government "Rumrunners"
+	name
+		word
+			"Rumrunner"
+			"Shady Character"
+			"Display"
+	message
+		word
+			`"`
+		word
+			"Harvesting juice from the Cloud is difficult, but the profits are immense."
+			"Join our workforce for unlimited profits!"
+			"Using the new Rumrunner Quicksilver, it is officially possible to harvest fifteen tons of juice in a very short time."
+			"Buy from our shipyards to get a free gift of coreshine with every ship!"
+		word
+			`"`

@@ -3184,6 +3184,7 @@ ship "Quicksilver" "Quicksilver (Proton)"
 
 
 ship "Quicksilver" "Quicksilver (Rumrunners)"
+	"variant map name" "Rumrunners"
 	outfits
 		"Particle Cannon" 2
 		
@@ -3499,6 +3500,7 @@ ship "Splinter" "Splinter (Proton)"
 	
 
 ship "Splinter" "Splinter (Rumrunners)"
+	"variant map name" "Rumrunners"
 	outfits
 		"Heavy Laser" 2
 		"Heavy Laser Turret" 2
@@ -3749,6 +3751,7 @@ ship "Wasp" "Wasp (Proton)"
 
 
 ship "Wasp" "Wasp (Rumrunners)"
+	"variant map name" "Rumrunners"
 	outfits
 		"Energy Blaster" 3
 		
