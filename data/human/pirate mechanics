@@ -1,0 +1,59 @@
+mission "Pirate Forged License"
+	priority
+	repeat
+	stealth
+	illegal 5000 "Criminal Scum, I've scanned you!"
+	cargo "forged license transponder" 1
+	to offer
+		not "Pirate Forged License: active"
+		"credits" > 5000000
+		or
+			"event: pirate forged license timer"
+			"Pirate Forged License: offered" < 1
+	source Greenrock
+	on offer
+		conversation
+			`blah blah blah`
+			`	"Blah blah blah, I'm Ivaldur the Forger. Want a license?"`
+			`	"Great, cost is 5M credits. What do ya say?"`
+			choice
+				`	"Yes!"`
+				`	"No!"`
+					decline
+			action
+				payment -5000000
+			`	"Blah blah blah. Here's a license"`
+				accept
+	on scan
+		dialog "You've been scanned!"			
+	to complete
+		never
+	on accept
+		"old rep: Republic" = "reputation: Republic"
+		"old rep: Merchant" = "reputation: Merchant"
+		"old rep: Syndicate" = "reputation: Syndicate"
+		"old rep: Militia" = "reputation: Militia"
+		"reputation: Republic" >?= 1
+		"reputation: Merchant" >?= 1
+		"reputation: Syndicate" >?= 1
+		"reputation: Militia" >?= 1
+		log "Forged License" "Acquired a Forged License, disguising you in Republic space so long as you are not scanned."
+		clear "event: pirate forged license timer"
+		event "pirate forged license timer"  
+	on fail
+		"reputation: Republic" = "old rep: Republic"
+		"reputation: Merchant" = "old rep: Merchant"
+		"reputation: Syndicate" = "old rep: Syndicate"
+		"reputation: Militia" = "old rep: Militia"
+		remove log "Forged License" "Acquired a Forged License, disguising you in Republic space so long as you are not scanned."
+		dialog "A criminal! There's a forged transponder in the cargo hold!"
+
+event "pirate forged license timer"
+
+mission "pirate forged license timer reminder"
+	landing
+	to offer
+		has "event: pirate forged license timer"
+	on offer
+		log "Forged License" "Enough time has passed since purchasing your license that if lost, you could get a new one."
+		dialog "Enough time has passed since purchasing your license that if lost, you could get a new one."
