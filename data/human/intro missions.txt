@@ -586,3 +586,201 @@ conversation "end of intro missions"
 		
 	label end
 	`	He hands you a credit chip worth <payment>, and says, "Best of luck to you, Captain. Don't hesitate to look me up if you're ever in the area. And remember to check the spaceports wherever you land. You never know who you'll find wandering around there."`
+
+
+mission "Pirate Intro I: The Old Buccaneer" # get the map & cryptic words from Billy Bones as he dies
+	name "blah Passenger to <planet>"
+	description "blah This old-timer captain offered to ride along with you to <destination>, and to give you some tips along the way."
+	landing
+	source
+		or
+			uninhabited
+			and
+				pirate
+				frontier
+			and
+				"dirt belt"
+				frontier
+	to offer
+		or
+			"reputation: Pirates" > 10
+			"reputation: Merchants" < -10
+	on offer
+		conversation
+			`You feel the hull of your <model> rattle in warning as it pierces the upper atmosphere on the dark side of <source>. Far below, a fiery streak carves through the gloom - a lone vessel plummeting towards the desolate planet.`
+			`	It isn't hard to follow the streak to a scorched path of twisted metal and destruction - at its end lies the ship's carcass. You park your <model> beside the shattered husk. An emblem of bones and unmistakable red paint stains the wreck with all manner of sin - a pirate's ship. Amidst the debris, the cockpit sits eerily intact, its darkened viewport silently daring you to pry it open, a lone chance at whatever monumental secrets lie within.`
+			choice
+				`	(Enter the wreck.)`
+				`	(Leave on your ship without investigating.)`
+					decline
+			# Describes Billy Bones from the first page of Treasure Island
+			`	You pry open the cockpit's hatch and cough through growing smoke to find a heavy-set man slumped in the pilot's seat. His tanned skin is slick with sweat and blood, a tattered blue coat hangs off one shoulder, and a single pigtail spills over his collar. One ragged, scarred hand - nails black and broken - desperately clutches a weathered chest in his lap. The other rummages through his tattered coat, searching. A jagged cut mars his cheek, while shrapnel protrudes out of a gaping wound in his midsection.`
+			`	He groans, "They're after the map... But I won't give up Flint's treasure so easy." A shaking hand emerges from his tattered coat grasping a small, brass key. "They'll have to pry it from my cold, dead hands."`
+			`	He blinks, focus sharpening as he finally sees you. His key opens the chest and the faint smell of tobacco and tar mix with the increasingly acrid smoke. "They're after this," he rasps, pulling a small pouch from the chest and shoves it into your hands. "The first key is at Hawkins Rest. Beware the Cyborg!" and he slumps back, shaking hands ceased. The cockpit shudders as the smoke suffocates, flames now licking the hull. With the given pouch in your hand, you escape just before the wreck erupts into a roaring inferno.`
+			`	Outside the wreck, you open the pouch to reveal a small, metallic sphere, textured with lines and symbols. You notice that the sphere has seven prominent keyholes, and a single protrusion - perhaps a data link. It is heavy in your hands. To accept the dying pirate's map is to accept the pirate's path. Or abandon the sphere forever.
+			choice
+				`	(Keep the sphere. It's a pirate's life for me.)`
+				`	(Leave the sphere behind, forever.)`
+					decline
+			`	The dying pirate mentioned Flint's treasure, Hawkins Rest, and a cyborg. With no other leads, your best hope may be to ask around at pirate spaceports.`
+			action
+				set "pirate intro: map"
+
+# invisibly unhide Hawkins Rest via #11318 here, so a new player should still follow the intro to learn where it is, while a veteran can just go there to skip this.
+# When the player enters the system, the map sphere reveals Hawkins Rest in a very showy way - showing the player where the hideaway is and, if Jack is there, reveals the existence of the map to Jack.
+# Jack says nothing but gets a glint in his eye, if he's there.
+
+mission "Pirate Intro II: The Sea Cook" #ask around for a lead, get told to do pirate jobs for credibility.
+	name "Blah"
+	description "blah blah."
+	source
+		government Pirate
+	destination "Bounty"
+	to offer
+		has "pirate intro: map"
+		has "Pirate Intro I: The Old Buccaneer: declined"
+		# "pirate jobs" < 5
+		not "Pirate Intro II: The Sea Cook: declined"
+		not "Pirate Intro II: The Sea Cook: done"
+	repeat
+	# todo, add substitutions so this conversation is more variable
+	on offer
+		conversation
+			`You pause at the <ship>'s airlock, recalling the metallic sphere given to you by a dying pirate, along with his dying words: "Flint's treasure," "Hawkins Rest," "Beware the Cyborg." This could be your chance to learn more.`
+			choice
+				`	(Ask around.)`
+				`	(Not today.)`
+					defer
+				`	(Throw away the sphere forever.)`
+					decline # todo, add a line about it being gone forever
+			`	You return inside and feel the cold metal of the sphere as you take it from the ship. It's heavier than it looks, solid and dense, with fine grooves tracing an intricate circuit of ridges across its surface.`
+			`	You navigate to the spaceport bar and settle at a scarred wooden table near the back. Across the room sits a grizzled group eyeing you warily. You could approach them.`
+			choice
+				`	"Anyone hear of a pirate named Flint or Hawkins Rest?"`
+				`	"My name is <first> <last>, and I want to be a pirate!"`
+				`	(Leave.)`
+					defer
+			branch donepiratejobs
+				"pirate jobs" >= 5
+			# branch for being known for high combat rating, maybe another for other notable things like main campaign completed. Could do the "worst pirate I've ever heard of" bit
+			`	One of them snorts and spits at your feet - amber liquid hissing against the scuffed wood. "Never heard of you."
+			`	The other steps in, "We're disinclined to acquiesce to your request." After seeing your blank stare, he adds, "Maybe you'd fare better if you'd done something for us. Run a few bloody jobs - smuggle goods, cut down law enforcement - then we might talk." He taps a finger against the table. "Prove you're one of us first."`
+			choice
+				`	"Okay."`
+				`	"What does that mean?"`
+			# blurb about how red jobs are pirate jobs
+			`	With that, their attention slips elsewhere as you find yourself unceremoniously dismissed.`
+				defer
+			label donepiratejobs
+			`	One scarred man exchanges a look with another, then chuckles. "Sounds like something Mad Jack would know. If you want answers, head to Bounty. There's a small cart selling kebabs right next to the spaceport. Order one, and tell the cook 'Call me Ishmael.' Then Mad Jack'll smell you out."`
+			`	Another from the group leans in, "He takes it seriously - just play along."`
+			choice
+				`	"Okay."`
+					goto accepted
+				`	"Why the elaborate process?"`
+			`	The second man shrugs and reveals a single silver tooth behind a crooked grin. "Look, Jack's a legend, but he's... mad, obviously. Just play along and he'll help ya out."`
+			label accepted
+			`	You stride back to your ship.`
+				accept
+	on complete
+		conversation
+			`You step off of your <model>. The air tastes of sand and engine exhaust, mixed with a faint whiff of grilled meat. Ahead, a low, three-walled building stands open to the sky, serving as a marketplace for the spaceport. In one corner, you find the source of the faint whiff - a lone cart with a sputtering grill, serving spiced lamb kebabs.`
+			`	You approach, boots kicking up orange dust while the rich aroma's waft grows stronger. The cook, a large, broad man with a stained apron, gives you a surprisingly warm, weathered smile that reveals a glint of gold. "Who's this for?" he asks as he slides a skewer of sizzling meat toward you.`
+			choice
+				`	"Call me Ishmael."`
+					action
+						set "pirate intro: ishmael"
+				`	"Captain <first> <last>."`
+				`	(Remain silent.)`
+# maybe add more branches? Make transition more subtle.
+			`	He gives you the kebab with a wink, as if you both shared a private joke. You leave the cart to head back to your ship. Perhaps "Mad Jack" will find you if you explore the spaceport again.`
+
+
+mission "Pirate Intro III: My Shore Adventure" # Meet Jack Silver, unlock first pirate hideaways, and intro to map needing regional unlocks
+	name "Blah"
+	description "blah blah."
+	source Bounty
+	destination "Hawkins Rest"
+	passengers 1
+	to offer
+		"Pirate Intro II: The Sea Cook: done"
+	on offer
+		conversation
+			`Nothing stirs beyond the routine as you wander through the spaceport. Returning to your ship, you see the old cook in a grease-stained apron and a grimy headscarf leaning against your <model>, a bird on his shoulder and bundle under one arm.`
+			`	"Nothing quite like getting your very first starship," he says.`
+			choice
+				`	"Remember like it was yesterday."`
+				`	"What an odd thing to say."`
+				`	"Beat it, old-timer, I've got more important things to do than chat with you."`
+					decline
+			# blah blah branches from above
+			`	"Had I known I'd be serving grub to such a savvy star-capt'n to ever grace me humble stand, I'd a fired em up fresh in your honor!" With a flourish, he dips into an exaggerated bow.`
+			`	"So, Capt'n, what's brought you out to old Jack in your pride and joy?" he asks as he pats the side of your ship. "What is it you've come to seek?"`
+			choice
+				`	"I'm looking for Hawkins Rest. Where can I find it?"`
+					goto hawkins
+				`	"What can you tell me about Flint's treasure?"`
+					goto flint
+				`	"Know any cyborgs I should beware?"`
+			`	"Beware, eh? You best be wearing whatever ya like!" He rolls back in a deep, baritone laugh. "And cyborgs? No better nor worse than any other you'll cross. As for legends... there's Hawkins, o'course, but nothin's left of the man, save the myth and Hawkins Rest."`
+				goto hawkins
+			label flint
+			# parrot line inspired by Treasure Island X: The Voyage, amuck phrase inspired-ish from XI What I Heard in the Apple-Barrel
+			# I believe Quarg lifespans are older than the parrot, but what does Jack care - he's a lying pirate
+			`	"Capt'n Flint, the Famed Free-" a loud squawk cuts him off, and he turns to face the bird perched on his shoulder. "Here's Capt'n Flint - I calls my parrot Capt'n Flint, after the Famed Freebooter. That bird's maybe two thousand years old, older still than any Quarg you'd come across. They say his namesake's ship was amuck with red blood and amassed with wealth beyond reckoning, christened at Hawkins Rest.`
+			label hawkins
+			`	"Aye, Hawkins Rest..." He gazes out into the haze of the spaceport for a moment before he clears his throat with a gravelly chuckle. He grips his bundle more tightly with fingers stained with spice and soot," I'll guide you there, Capt'n, and to a quarter score more hideaways that'll make any Cap's eyes water. But swear me a modest pledge: answer me a lone question when I plant me boots on that secluded rock beside ya."`
+			choice
+				`	"Of course."`
+				`	"Absolutely not."`
+					decline # maybe expand this
+			`	The corners of Jack's mouth broaden into a genuine smile, and a deep, rolling laugh rumbles from his chest. He rips off his apron and rolls up his sleeves, revealing a rough shirt and muscular forearms tattooed with various symbols. Without another word, he hobbles past you with a distinct limp favoring his right leg. He clambers aboard the <ship> with surprising grace for a man of his years and scars, pausing at the threshold to glance back over his shoulder.`
+			`	"Step aboard, Capt'n," he calls. "Off to the cockpit. I'll show ya that rock and every hidden nook beyond." There's nothing left but to follow him aboard. The path to Hawkins Rest awaits.`
+				accept
+			# if a working forged license gets added, add mechanic and blurb here for Bounty to Hawkins Rest trip
+	on complete
+		conversation
+			`With the aid of the map and Jack's instructions, you find the scrawny lump of rock called Hawkins Rest, a cosmic needle amid a proverbial haystack of thousands of other near-identical asteroids in the system. You see a lone empty landing pad hidden within the hollowed asteroid, connecting to corridors leading further into the hidden hideaway.`
+			`	Just after touchdown, Jack limps into the cockpit with the map-sphere in a scarred hand, the bird on his shoulder cooing softly. Jack tilts his head, and with a low voice says, "Tell me, Capt'n, d'you know what this is and who stands before ye now?"`
+			choice # probably branch for these
+				`	"I don't know how to unlock the map. And not much about you."`
+				`	"It's a map, and you're the crusty cook I picked up on Bounty."`
+				`	"I have a feeling you're about to tell me."`
+			`	Jack's laughter rumbles through the cockpit like thunder and he leans forward. "Aye," he rumbles, tracing a scarred finger along one of the sphere's grooved glyphs, "me true trade's richer than spice and stew. I know more o Flint than any fool alive - plunders, histories, secrets." He raises the sphere at the last word, which glitters in the light. "Don't take me word? Ask ol Capt'n Flint himself - squawks more o the truth better than any son of a rum puncheon." he juts a thumb to his shouldered parrot, which squawks once, tilting its head.`
+			`	Jack drops his voice to a consiratorial whisper. "Here's me offer, Capt'n: I'll tell ye the hidden histories and lost legends o old Flint here to help ye crack this orb wide, and lead ye to Flint's Treasure. In return, I humbly ask fer a share befittin a Quartermaster - every fourth bit o loot found. Ye can even keep the heavier hoard o any artifacts found, just a fourth o the credits'll do fer me."`
+			`	He folds his arms, sphere still in hand. "What say ye? A bargain that'd make old Flint himself weep with envy."`
+			choice
+				`	"Sounds good to me. Lets find this treasure!"`
+				`	"You really are mad."`
+				`	"Absolutely not!"`
+				# make branches for the latter two
+			`	Jack's grin lights up his weathered face like lightning. Before you can react, he clasps your forearm in a visegrip that rattles your bones to their marrow. His hearty laugh echoes through the ship as he gives you a wrenching shake.`
+			`	"Brilliant choice, Capt'n!," he continues shaking you. "We'll be richer than any gentlemen of fortune dare dream!"`
+			`	Without another word, Jack pivots, map-sphere in hand, and boldly strides out of the cockpit. Still shaking, you hear his offbeat, lumbering footfalls echo and fade as he leaves the ship - gone, in only a moment.`
+			choice
+				`	(Wait on the ship.)`
+				`	(Pursue Jack.)`
+					goto pursuit
+			`	You remain in the suddenly hushed cockpit as Jack disappeared with the map. Without it, there is no hope to uncover its secrets, let alone find whatever treasure it leads to. Minutes turn to hours that crawl by in silence.`
+				goto hesback
+			label pursuit
+			`	You dart out of the <ship> to follow Jack's trail only to find no trace of the man. You push into the cramped corridors of Hawkins Rest and through what feels like countless doors, ducts, and turns beneath flickering lights, with no sign of Jack or the sphere. After fruitless hours of searching, you limp back to the ship weary and emptyhanded.`
+			label hesback # maybe add another choice here to make it more despairing that Jack's ditched you with the map and hide his return a bit more?
+			`	As the last echoes of hope fade, you hear powerful banging outside of your <model> before the latch is swung open. You turn to see Jack leaning in the doorway, grin wide, the map-sphere clutched in his rough hand, now with one of its seven keyholes prominently occupied.`
+			`	He tosses it to you in a lazy arc, where it lands with a soft thud in your palm. "Plug that in yer nav-array, Capt'n," he jovially commands. "It'll light the way to a half dozen hideaways, as promised, including this one o course. Now, the trick to this here map is that ol Flint hid the keys in hideaways cross the galaxy. I can point to where ye need go, but its you that's got to uncover the hideaways now. I'll be at the spaceport, find me there, and I'll steer you to where our fortune lies."`
+			# maybe choice here to ask questions?
+			`	With that, Jack recedes back out of the <ship> once more, leaving you alone with the map-sphere's first secret unlocked, and a promise of treasure yet to come.`
+
+# Mission if player opts out of Jack, to reveal other starting hideaways after landing on Hawkins Rest
+
+# "Pirate Intro IV: The Stockade" # A repeatable mission to ask Jack about the remaining regions that the player hasn't visited/unlocked hideaways for yet. Up to regional storyline creators what they want here: Jack can drop story seeds, common knowledge about the region, history, or whatever else. He also is available for more general pirate questions.
+
+# "Pirate Intro V: My Sea Adventure" # Semi-repeatable (7 times, once for each region unlocked): After unlocking a region:
+# 1) Jack will tell you a bit of lore about a region (again up to regional storyline creators if they want something specific, or I can make this more about how Flint visited said region).
+# 2) Jack will tell the player a progressing short history of the legendary pirate Flint, that will have clues/answers to the final treasure's traps and puzzles (but is in no way required to complete them).
+# 3) By the end, the player will have a short story outlining the legend of Flint in their logbook.
+
+
+# "Pirate Intro VI: Captain Silver" # After unlocking all regions and getting the last bit of story about Flint, the treasure map is finally unlocked, and the treasure's location revealed. Probably the last thing to work on after the rest of this is settled. Options of:
+# 1) Reveal of the treasure with a short mission describing the treasure's puzzle/trap/contents. Possible small dynamic betrayal by Jack depending on if you partnered with him or not (only impacts how much treasure you get, and his escape leaves open a plot thread for future stories/kickstarting a pirate campaign later).
+# 2) Treasure Island route of this being a larger journey to the treasure itself, a betrayal by Jack, more extensive fight, maybe journey to track him down, etc (this would probably be front-loading a more pirate campaign-y route).
